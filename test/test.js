@@ -1,5 +1,8 @@
 const assert = require('assert');
+const chai = require('chai');
 const _ = require('../lowline');
+
+const { expect } = chai;
 
 console.log('============//////////////==============');
 console.log(new Date().toLocaleTimeString());
@@ -14,7 +17,7 @@ describe('Array', () => {
 describe('_', () => {
   describe('_', () => {
     it('should import _ successfully', () => {
-      assert.equal(_, 'hello world');
+      expect(_).to.deep.equal({});
     })
   })
 })

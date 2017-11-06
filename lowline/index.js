@@ -1,1 +1,5 @@
-module.exports = 'hello world';
+const _ = {};
+
+
+
+module.exports = _;
