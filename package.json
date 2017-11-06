@@ -2,20 +2,22 @@
   "name": "lowline",
   "version": "1.0.0",
   "description": "recreation of lodash library with tests",
-  "author": "David Kang",
+  "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/d-kang/lowline.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/d-kang/lowline/issues"
   },
-  "homepage": "https://github.com/d-kang/lowline#readme"
+  "homepage": "https://github.com/d-kang/lowline#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
 }
