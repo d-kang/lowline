@@ -1,14 +1,15 @@
 const _ = {};
 
-_.chunk = (collection, num) => {
-  const len = collection.length;
+_.chunk = (array, size) => {
+  const len = array.length;
   const store = [];
-  for (let i = 0; i < len; i += num) {
-    const chunk = collection.slice(i, i + num);
+  for (let i = 0; i < len; i += size) {
+    const chunk = array.slice(i, i + size);
     store.push(chunk);
   }
   return store;
 };
 
+_.compact = () => {};
 
 module.exports = _;
