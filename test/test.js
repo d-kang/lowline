@@ -17,7 +17,22 @@ describe('Array', () => {
 describe('_', () => {
   describe('_', () => {
     it('should import _ successfully', () => {
-      expect(_).to.deep.equal({});
+      expect(_).to.not.equal(undefined);
+    })
+    it('_ should be an object', () => {
+      expect(_).to.be.a('object');
+    })
+  })
+})
+
+
+describe('_.chunk', () => {
+  describe('_.chunk', () => {
+    it('it should be a function', () => {
+      expect(_.chunk).to.be.a('function');
+    })
+    it('_ should be an object', () => {
+      expect(typeof _).to.equal('object');
     })
   })
 })
