@@ -1,7 +1,13 @@
 const _ = {};
 
-_.chunk = () => {
-  
+_.chunk = (collection, num) => {
+  const len = collection.length;
+  const store = [];
+  for (let i = 0; i < len; i += num) {
+    const chunk = collection.slice(i, i + num);
+    store.push(chunk);
+  }
+  return store;
 };
 
 

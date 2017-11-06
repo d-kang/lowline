@@ -27,26 +27,32 @@ describe('_', () => {
 
 
 describe('_.chunk', () => {
-  const expected = _.chunk(['a', 'b', 'c', 'd'], 2);
-  const actual = [['a', 'b'], ['c', 'd']];
+  const test = {
+    e1: _.chunk(['a', 'b', 'c', 'd'], 2),
+    a1: [['a', 'b'], ['c', 'd']],
+    e2: _.chunk(['a', 'b', 'c', 'd'], 3),
+    a2: [['a', 'b', 'c'], ['d']]
+  };
 
   it('it should be a function', () => {
     expect(_.chunk).to.be.a('function');
   });
   it('it should return an array', () => {
-    expect(expected).to.be.an('array');
+    expect(test.a1).to.be.an('array');
+    expect(test.a2).to.be.an('array');
   });
   it('it should return an array of arrays', () => {
-    expect(expected[0]).to.be.an('array');
-    expect(expected[1]).to.be.an('array');
+    expect(test.a1[0]).to.be.an('array');
+    expect(test.a1[1]).to.be.an('array');
+    expect(test.a2[0]).to.be.an('array');
+    expect(test.a2[1]).to.be.an('array');
   });
   it('it should have a length of 2', () => {
-    expect(expected.length).to.equal(2);
+    expect(test.a1.length).to.equal(2);
+    expect(test.a2.length).to.equal(2);
   });
   it('it should chunk arrays into groups', () => {
-    expect(expected).to.deep.equal(actual);
-  });
-  it('it should chunk arrays into groups', () => {
-    expect(expected).to.deep.equal(actual);
+    expect(test.a1).to.deep.equal(test.e1);
+    expect(test.a2).to.deep.equal(test.e2);
   });
 });
