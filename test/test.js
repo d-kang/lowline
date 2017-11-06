@@ -27,12 +27,26 @@ describe('_', () => {
 
 
 describe('_.chunk', () => {
-  describe('_.chunk', () => {
-    it('it should be a function', () => {
-      expect(_.chunk).to.be.a('function');
-    });
-    it('_ should be an object', () => {
-      expect(typeof _).to.equal('object');
-    });
+  const expected = _.chunk(['a', 'b', 'c', 'd'], 2);
+  const actual = [['a', 'b'], ['c', 'd']];
+
+  it('it should be a function', () => {
+    expect(_.chunk).to.be.a('function');
+  });
+  it('it should return an array', () => {
+    expect(expected).to.be.an('array');
+  });
+  it('it should return an array of arrays', () => {
+    expect(expected[0]).to.be.an('array');
+    expect(expected[1]).to.be.an('array');
+  });
+  it('it should have a length of 2', () => {
+    expect(expected.length).to.equal(2);
+  });
+  it('it should chunk arrays into groups', () => {
+    expect(expected).to.deep.equal(actual);
+  });
+  it('it should chunk arrays into groups', () => {
+    expect(expected).to.deep.equal(actual);
   });
 });
