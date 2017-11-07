@@ -33,8 +33,34 @@
         }
       }
     }
-
     return store;
+  };
+
+  // _.reduce([1,2,3,4,5], (acc, next) => acc + next, 0)
+  // _.reduce([1,2,3,4,5], (acc, next) => acc + next)
+
+  _.reduce = (collection, cb, acc) => {
+    if (Array.isArray(collection)) {
+      for (var i = 0; i < collection.length; i++) {
+        const elem = collection[i];
+        if (acc === undefined) {
+          acc = elem;
+        } else {
+          acc = cb(acc, elem, i, collection);
+        }
+      }
+    } else {
+      for (var key in collection) {
+        const val = collection[key];
+        if (acc === undefined) {
+          acc = val;
+        } else {
+          acc = cb(acc, val, key, collection);
+        }
+      }
+    }
+
+    return acc;
   };
 
 })();

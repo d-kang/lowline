@@ -46,25 +46,25 @@
         const result = _.reduce([1,2,3,4,5], (acc, curr, i, arr) => {
           return acc + curr;
         }, 0);
-        assert(result).to.equal(15);
+        expect(result).to.equal(15);
       });
       it('it should reduce arrays with no inital val', () => {
         const result = _.reduce([1,2,3,4,5], (acc, curr, i, arr) => {
           return acc + curr;
         }, 0);
-        assert(result).to.equal(15);
+        expect(result).to.equal(15);
       });
       it('it should reduce objects', () => {
         const result = _.reduce({a:1, b:2, c:3, d:4}, (acc, curr, key, arr) => {
           return acc + curr;
         });
-        assert(result).to.equal(10);
+        expect(result).to.equal(10);
       });
       it('it should reduce objects with no initial val', () => {
         const result = _.reduce({a:1, b:2, c:3, d:4}, (acc, curr, key, arr) => {
           return acc + curr;
         });
-        assert(result).to.equal(10);
+        expect(result).to.equal(10);
       });
     });
 
