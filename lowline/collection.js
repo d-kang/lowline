@@ -16,12 +16,24 @@
   };
 
   _.filter = (collection, cb) => {
-    const store = [];
-    _.forEach(collection, function(item, index, array) {
-      if (cb(item, index, array)) {
-        store.push(item);
+    let store;
+    if (typeof collection.length === 'number') {
+      store = [];
+      _.forEach(collection, function(item, index, array) {
+        if (cb(item, index, array)) {
+          store.push(item);
+        }
+      });
+    } else {
+      store = {};
+      for (let key in collection) {
+        const val = collection[key];
+        if (cb(val, key, collection)) {
+          store[key] = val;
+        }
       }
-    });
+    }
+
     return store;
   };
 
