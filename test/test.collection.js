@@ -13,20 +13,31 @@
 
   const { expect } = chai;
   describe('Collection', () => {
-    describe('_.forEach', () => {
+    describe('_.each', () => {
       it('it should iterate over elem', () => {
         const store = [];
-        _.forEach([1, 2, 3], (elem, i, arr) => {
+        _.each([1, 2, 3], (elem, i, arr) => {
           store.push([elem, i]);
         });
         expect(store).to.deep.equal([[1,0], [2,1], [3,2]]);
       });
       it('it should work on objects', () => {
         const store = [];
-        _.forEach({a:1, b:2, c:3}, (val, key, obj) => {
+        _.each({a:1, b:2, c:3}, (val, key, obj) => {
           store.push([val, key]);
         });
         expect(store).to.deep.equal([[1, 'a'], [2, 'b'], [3, 'c']]);
+      });
+    });
+
+    describe('_.map', () => {
+      it('it should map arrays', () => {
+        const result = _.map([1, 2, 3], (elem, i, arr) => elem + 2);
+        expect(result).to.deep.equal([3, 4, 5]);
+      });
+      it('it should map objects', () => {
+        const result = _.map({a:1, b:2, c:3}, (val, key, obj) => val + 2);
+        expect(result).to.deep.equal([3, 4, 5]);
       });
     });
 

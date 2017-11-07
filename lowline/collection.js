@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  _.forEach = (collection, cb) => {
+  _.each = (collection, cb) => {
     if (Array.isArray(collection)) {
       for (let i = 0; i < collection.length; i++) {
         let item = collection[i];
@@ -19,7 +19,7 @@
     let store;
     if (typeof collection.length === 'number') {
       store = [];
-      _.forEach(collection, function(item, index, array) {
+      _.each(collection, function(item, index, array) {
         if (cb(item, index, array)) {
           store.push(item);
         }
