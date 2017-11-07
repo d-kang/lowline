@@ -1,9 +1,17 @@
 (function() {
   'use strict';
+
   _.forEach = (collection, cb) => {
-    for (let i = 0; i < collection.length; i++) {
-      let item = collection[i];
-      cb(item, i, collection);
+    if (Array.isArray(collection)) {
+      for (let i = 0; i < collection.length; i++) {
+        let item = collection[i];
+        cb(item, i, collection);
+      }
+    } else {
+      for (let key in collection) {
+        const value = collection[key];
+        cb(value, key, collection);
+      }
     }
   };
 
