@@ -5,8 +5,8 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch",
-    "test:karma": "karma start"
+    "start": "live-server",
+    "test": "mocha --watch"
   },
   "repository": {
     "type": "git",

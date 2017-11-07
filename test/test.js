@@ -9,9 +9,10 @@ const FILL_ME_IN_FUNC = () => {};
 
 console.log('============//////////////==============');
 console.log(new Date().toLocaleTimeString());
+const xxdescribe = () => {};
 
-xdescribe('', () => {
-  xdescribe('', () => {
+xxdescribe('', () => {
+  xxdescribe('', () => {
     const testFunc = FILL_ME_IN_FUNC;
     const params1 = FILL_ME_IN_ARR;
     const output1 = FILL_ME_IN_ARR;
@@ -23,7 +24,7 @@ xdescribe('', () => {
       e2: testFunc(...params2),
       a2: output2
     };
-    
+
     it('it should be a function', () => {
       expect(testFunc).to.be.a('function');
     });
@@ -43,12 +44,12 @@ xdescribe('', () => {
       expect(test.a1).to.deep.equal(test.e1);
       expect(test.a2).to.deep.equal(test.e2);
     });
-    
+
   });
 });
 
-describe('_', () => {
-  describe('_', () => {
+xxdescribe('_', () => {
+  xxdescribe('_', () => {
     it('should import _ successfully', () => {
       expect(_).to.not.equal(undefined);
     });
@@ -107,12 +108,12 @@ describe('_.compact', () => {
     const params2 = [false, null, undefined, 'hello', 42, NaN];
     const output2 = ['hello', 42];
     const test = {
-      e1: testFunc(...params1),
+      e1: testFunc(params1),
       a1: output1,
-      e2: testFunc(...params2),
+      e2: testFunc(params2),
       a2: output2
     };
-    
+
     it('it should be a function', () => {
       expect(testFunc).to.be.a('function');
     });
@@ -132,6 +133,6 @@ describe('_.compact', () => {
       expect(test.a1).to.deep.equal(test.e1);
       expect(test.a2).to.deep.equal(test.e2);
     });
-    
+
   });
 });
