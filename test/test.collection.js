@@ -35,6 +35,10 @@
         const result = _.map([1, 2, 3], (elem, i, arr) => elem + 2);
         expect(result).to.deep.equal([3, 4, 5]);
       });
+      it('it should return an array', () => {
+        const result = _.map({a:1, b:2, c:3}, (val, key, obj) => val + 2);
+        expect(result).to.be.an('array');
+      });
       it('it should map objects', () => {
         const result = _.map({a:1, b:2, c:3}, (val, key, obj) => val + 2);
         expect(result).to.deep.equal([3, 4, 5]);
