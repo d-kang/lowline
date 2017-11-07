@@ -15,6 +15,20 @@
     }
   };
 
+  _.map = (collection, cb) => {
+    if (Array.isArray(collection)) {
+      return _.reduce(collection, (acc, elem, index, arr) => {
+        acc[index] = cb(elem, index, arr);
+        return acc;
+      }, []);
+    } else {
+      return _.reduce(collection, (acc, val, key, obj) => {
+        acc.push(cb(val, key, obj));
+        return acc;
+      }, []);
+    }
+  };
+
   _.filter = (collection, cb) => {
     let store;
     if (typeof collection.length === 'number') {
@@ -36,9 +50,6 @@
     return store;
   };
 
-  // _.reduce([1,2,3,4,5], (acc, next) => acc + next, 0)
-  // _.reduce([1,2,3,4,5], (acc, next) => acc + next)
-
   _.reduce = (collection, cb, acc) => {
     if (Array.isArray(collection)) {
       for (var i = 0; i < collection.length; i++) {
@@ -59,7 +70,6 @@
         }
       }
     }
-
     return acc;
   };
 
