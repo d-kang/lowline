@@ -96,8 +96,19 @@
       it('should not mutate the original array', () => {
         expect(array).to.deep.equal([1]);
       });
-
     });
+
+    describe('_.difference', () => {
+      describe('Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons. The order and references of result values are determined by the first array.', () => {
+        it('should return the array items not found in the other array', (done) => {
+          const result = _.difference([2, 1], [2, 3]);
+          expect(result).to.deep.equal([1]);
+        });
+      });
+    });
+
+
+
 
 
   });
