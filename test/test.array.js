@@ -83,23 +83,22 @@
           expect(test.a2).to.deep.equal(test.e2);
         });
       });
+    });
 
-      describe('_.concat', () => {
-        var array = [1];
-        var other = _.concat(array, 2, [3], [[4]]);
+    describe('_.concat', () => {
+      var array = [1];
+      var other = _.concat(array, 2, [3], [[4]]);
 
-        it('it should concat array', () => {
-          expect(other).to.depp.equal([1, 2, 3, [4]]);
-        });
-
-        it('should not mutate the original array', () => {
-          expect(array).to.deep.equal([1]);
-        });
-
+      it('it should concat array', () => {
+        expect(other).to.deep.equal([1, 2, 3, [4]]);
       });
 
-
+      it('should not mutate the original array', () => {
+        expect(array).to.deep.equal([1]);
+      });
 
     });
+
+
   });
 })();

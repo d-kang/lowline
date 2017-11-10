@@ -16,4 +16,15 @@
     return _.filter(array, elem => Boolean(elem));
   };
 
+  _.concat = (...args) => {
+    return _.reduce(args, (acc, next, i, arr) => {
+      if (Array.isArray(next)) {
+        acc.push(...next);
+      } else {
+        acc.push(next);
+      }
+      return acc;
+    }, []);
+  };
+
 })();
