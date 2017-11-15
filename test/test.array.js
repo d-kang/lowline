@@ -1,3 +1,11 @@
+/**
+ * @Author: wiz
+ * @Date:   11.14.2017 07:30pm
+ * @Filename: test.array.js
+ * @Last modified by:   wiz
+ * @Last modified time: 11.14.2017 07:30pm
+ */
+
 (function() {
   'use strict';
   const { expect } = chai;
@@ -103,6 +111,20 @@
         it('should return the array items not found in the other array', (done) => {
           const result = _.difference([2, 1], [2, 3]);
           expect(result).to.deep.equal([1]);
+        });
+      });
+    });
+    describe('_.difference', () => {
+      describe('', () => {
+        it('Fills elements of array with value from start up to, but not including, end.', (done) => {
+          var array = [1, 2, 3];
+          expect(_.fill(array, 'a'));
+          console.log(array);
+          // => ['a', 'a', 'a']
+          _.fill(Array(3), 2);
+          // => [2, 2, 2]
+          _.fill([4, 6, 8, 10], '*', 1, 3);
+          // => [4, '*', '*', 10]
         });
       });
     });
