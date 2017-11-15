@@ -3,7 +3,7 @@
  * @Date:   11.14.2017 07:30pm
  * @Filename: test.array.js
  * @Last modified by:   wiz
- * @Last modified time: 11.14.2017 07:30pm
+ * @Last modified time: 11.14.2017 07:31pm
  */
 
 (function() {
@@ -114,7 +114,7 @@
         });
       });
     });
-    describe('_.difference', () => {
+    describe('_.fill', () => {
       describe('', () => {
         it('Fills elements of array with value from start up to, but not including, end.', (done) => {
           var array = [1, 2, 3];
